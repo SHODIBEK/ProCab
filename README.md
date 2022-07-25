@@ -21,7 +21,7 @@ To deploy this project run
 
 ## 🖼️ **SCREENSHOTS**
 
-![App Screenshot](https://i.ibb.co/LhNf29L/screencapture-zhgroup-uz-2020-09-03-05-54-22.jpg)
+![App Screenshot](https://i.ibb.co/SdmFj3M/screencapture-procab-uz-2020-09-03-05-35-44.jpg)
 
 
 ## 🔗**LINK TO PAGE**
