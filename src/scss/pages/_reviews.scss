@@ -1,0 +1,224 @@
+.reviews {
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 25px 20px;
+        margin-bottom: 80px;
+        @include mobile {
+            grid-template-columns: 1fr;
+            margin-bottom: 40px;
+        }
+    }
+    
+    &__item {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    &__top {
+        display: grid;
+        grid-template-columns: 146px 1fr;
+        grid-gap: 20px;
+        align-items: flex-end;
+        min-height: 146px;
+        @include mobile {
+            min-height: unset;
+        }
+    }
+    &__img {
+        display: inline-block;
+        width: 146px;
+        height: auto;
+        border-radius: 3px;
+    }
+    &__name {
+        margin: 0;
+        font-weight: bold;
+        font-size: 25px;
+        color: #000000;
+        @include mobile {
+            font-size: 18px;
+        }
+    }
+    
+    &__text {
+        margin: 0;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        color: #000000;
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &__title {
+        display: block;
+        margin-bottom: 40px;
+        font-weight: 800;
+        font-size: 35px;
+        line-height: 1.2;
+        color: #2B3035;
+        @include mobile {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+    &__form {
+        .input-group {
+            &:first-child {
+                margin-right: 0;
+            }
+            @include mobile {
+                margin-bottom: 0;
+            }
+            input {
+                width: 100%;
+                height: 50px;
+                border: 1px solid #B6B6B6;
+                border-radius: 0;
+                box-shadow: none;
+                @include mobile {
+                    height: 35px;
+                    border: 1px solid #6B6B6B;
+                    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+                    border-radius: 3px;
+                }
+            }
+            textarea {
+                height: 50px;
+                min-height: unset;
+                border: 1px solid #B6B6B6;
+                border-radius: 0;
+                box-shadow: none;
+                &::placeholder {
+                    line-height: 2;
+                }
+                @include mobile {
+                    height: auto;
+                    min-height: 95px;
+                    border: 1px solid #6B6B6B;
+                    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
+                    border-radius: 3px;
+                    &::placeholder {
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+        &-groups {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+        }
+        &-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 50px;
+            margin-top: 23px;
+            @include mobile {
+                grid-template-columns: 290px;
+                grid-gap: 30px;
+            }
+        }
+        &-atention {
+            &__title {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 22px;
+                color: $color-black;
+                margin-bottom: 25px;
+                @include mobile {
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+            &__items {
+                display: inline-flex;
+                flex: 0 1 auto;
+            }
+            &__item {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 46px;
+                padding: 0 10px;
+                border: 1px solid #B6B6B6;
+                border-radius: 3px;
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+        &-other {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            @include mobile {
+                grid-gap: 30px;
+            }
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+        }
+        &__btn {
+            button {
+                width: 100%;
+                margin-top: 25px;
+                justify-content: center;
+                @include mobile {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+.upload-img {
+    label {
+        display: inline-block;
+        color: #2B3035;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.uploads-icon {
+    position: relative;
+    margin-left: 37px;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -37px;
+        margin: auto;
+        width: 23px;
+        height: 23px;
+        background: url(../images/icons/uploads.svg) no-repeat center;
+    }
+}
+
+.upload {
+    &-done {
+        display: none;
+        font-size: 13px;
+        color: $color-black;
+        margin-bottom: 10px;
+    }
+    &-error {
+        display: none;
+        font-size: 14px;
+        color: $color-red;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,97 @@
+.search {
+    .title {
+        h2 {
+            margin-top: 47px;
+            @include mobile {
+                margin-top: 33px;
+            }
+        }
+    }
+    &__form {
+        margin-top: 49px;
+        margin-bottom: 32px;
+        @include mobile {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        form {
+            display: grid;
+            grid-template-columns: 1fr 35px;
+            grid-gap: 10px;
+            align-items: center;
+        }
+        
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            height: 35px;
+            font-size: 14px;
+            line-height: 17px;
+            color: #2C2C2C;
+            background: #FFFFFF;
+            border: 1px solid #C0C0C0;
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+    }
+    
+    &__item {
+        margin-bottom: 38px;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__link {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        
+        &:hover {
+            .search__info {
+                text-decoration: underline;
+                text-decoration-color: $color-red;
+            }
+        }
+    }
+    
+    &__title {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 25px;
+        color: #6B6B6B;
+        text-transform: uppercase;
+        
+        @include mobile {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    
+    &__subtitle {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 25px;
+        color: #6B6B6B;
+        
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    
+    &__info {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 25px;
+        color: #6B6B6B;
+        
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+}

@@ -1,0 +1,307 @@
+.about-us {
+    margin: 56px 0 52px 0;
+    min-height: 535px;
+    @include mobile {
+        margin: 40px 0 35px 0;
+        min-height: unset;
+    }
+    &__wrapper {
+        position: relative;
+    }
+    
+    &__title {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-black;
+        text-align: center;
+        z-index: 1;
+        
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+    
+    &__bg {
+        position: absolute;
+        top: -220px;
+        right: -314px;
+        width: 853px;
+        height: 689px;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 0;
+        
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+.videoWrapper { 
+    position: relative; 
+    width: 571px;
+    height: 374px;
+    background: #C4C4C4;
+    box-shadow: 0px 30px 50px rgba(73, 108, 196, 0.2);
+    border-radius: 3px;
+    z-index: 1;
+    
+    @include mobile {
+        width: 100%;
+        height: 189.3px;
+    }
+}
+
+.videoPoster { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    background-size: cover;
+    text-indent: -999em;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 800ms, height 0s;
+    transition-delay: 0s, 0s;
+    &::before {
+        content: ""; 
+        position: absolute; 
+        display: block; 
+        background: url(../images/icons/play-icon.svg) no-repeat 0 0;
+        background-size: cover;
+        top: 50%;
+        left: 50%;
+        width: 94px;
+        height: 94px;
+        z-index: 2;
+        cursor: pointer;
+        transform: translate(-50%,-50%);
+        transition: all 0.3s ease-in-out;
+        
+        @include mobile {
+            width: 47.58px;
+            height: 47.58px;
+        }
+    }
+    
+    &:hover {
+        &::before {
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    
+    .videoWrapperActive & {
+        opacity: 0;
+        height: 0;
+        transition-delay: 0s, 800ms;
+    }
+} 
+.videoIframe { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+
+/* image poster clicked, player class added using js */
+.video.player img { display: none; }
+.video.player:after { display: none; }
+
+.default-section {
+    img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 20px 0;
+        font-family: $proxima-regular;
+        font-style: normal;
+        font-weight: bold;
+        color: #2B2525;
+    }
+    h1 {
+        font-size: 35px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+    h5 {
+        font-size: 15px;
+    }
+    p {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 25px;
+        color: #2B2525;
+    }
+    ul {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        li {
+            position: relative;
+            padding-left: 15px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                height: 5px;
+                width: 5px;
+                background: $color-red;
+                border-radius: 50%;
+                left: 2px;
+                top: 1px;
+                bottom: 0;
+                margin: auto;
+            }
+        }
+    }
+    table {
+        display: block;
+        border-spacing: 0;
+        margin: 50px 0;
+        max-width: 100%;
+        overflow-x: auto;
+        th {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 1.2;
+            text-align: left;
+            color: #000;
+        }
+        tr,
+        th,
+        td {
+            width: 33.3%;
+            border: 1px solid #000;
+            padding: 15px;
+        }
+        td {
+            font-weight: normal;
+            font-size: 16px;
+            color: #000;
+        }
+    }
+    i,
+    b,
+    u {
+        display: inline-block;
+        line-height: 1.2;
+        font-size: 16px;
+        color: $color-black;
+        margin-bottom: 4px;
+    }
+    a {
+        display: inline-block;
+        line-height: 1.2;
+        font-size: 16px;
+        color: $color-red;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    @include mobile {
+        img {
+            margin-bottom: 10px;
+        }
+        h1 {
+            font-size: 22px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        h4 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        h5 {
+            font-size: 14px;
+        }
+        ul {
+            li {
+                font-size: 14px;
+            }
+        }
+        table {
+            margin: 25px 0;
+            tr,
+            td,
+            th {
+                font-size: 14px;
+            }
+        }
+        b,
+        i,
+        u,
+        a {
+            font-size: 14px;
+        }
+    }
+}
+
+.about {
+    margin-bottom: 45px;
+    @include mobile {
+        margin-bottom: 30px;
+    }
+}
+
+.inner-page {
+    .about-us {
+        margin-top: 50px;
+        margin-bottom: 69px;
+        padding-top: 68px;
+        min-height: 603px;
+        @include mobile {
+            margin-top: 30px;
+            margin-bottom: 40px;
+            padding-top: 0;
+            min-height: unset;
+        }
+        &__bg {
+            top: -132px;
+            right: -266px;
+            height: 602px;
+            background-size: contain;
+        }
+    }
+}

@@ -1,0 +1,131 @@
+extends pug/base
+
+append vars
+    - title = 'Контакты'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#3181D7'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page']
+
+block content
+    .content
+        // Шапка
+        include pages/header
+        // Контент
+        .main
+            .container
+                .crumbs
+                    ul
+                        li
+                            a(href=`/` title="На главную")
+                                | Главная
+                        li
+                            span Контакты
+                .contact
+                    .title
+                        h2
+                            | Контакты
+                    .contact__items
+                        .contact__item
+                            .contact__title
+                                | Главный офис
+                            ul.contact__list
+                                li
+                                    | <b>Телефон:</b> (+998 71) 258 08 58, (+998 98) 126 04 44
+                                li
+                                    | <b>Адрес:</b> г. Ташкент, Сергелийский район, ул. Файзли, дом 3
+                                li
+                                    | <b>График работы:</b> Понедельник - Пятница: 9:00 - 18:00
+                                li
+                                    | <b>Е-mail:</b> sales@procab.uz
+                            ul.social
+                                li.social-list
+                                    a(href="#" target="_blank").social-link
+                                        +svg("fb").social-icon.fb
+                                li.social-list
+                                    a(href="#" target="_blank").social-link
+                                        +svg("insta").social-icon.insta
+                                li.social-list
+                                    a(href="#" target="_blank").social-link
+                                        +svg("tg").social-icon.tg
+                                li.social-list
+                                    a(href="#" target="_blank").social-link
+                                        +svg("in").social-icon.in
+                                li.social-list
+                                    a(href="#" target="_blank").social-link
+                                        +svg("youtube").social-icon.youtube
+                        .contact__item
+                            .contact__title
+                                | Отдел продаж
+                            ul.contact__list
+                                li
+                                    | <b>Телефон:</b> (+998 71) 257-60-00, (+998 98) 126-04-44
+                                li
+                                    | <b>Е-mail:</b> sales@procab.uz
+                        .contact__item
+                            .contact__title
+                                | Отдел маркетинга
+                            ul.contact__list
+                                li
+                                    | <b>Телефон:</b> (+998 93) 380-99-90
+                                li
+                                    | <b>Е-mail:</b> marketing@procab.uz
+                    .contact__map
+                        img(src="images/content/map.jpg", alt="")
+                    .contact__form
+                        h2
+                            | Если у вас есть вопросы, вы можете обратиться к нам:
+                        form(action="/" method="GET" id="contactForm")
+                            .input-groups
+                                .input-group
+                                    input(type="text" name="name" placeholder="Представьтесь пожалуйста" id="name")
+                                .input-group
+                                    input(type="email" name="email" placeholder="Ваш адрес электронной почты" id="email")
+                                .input-group.text-group
+                                    textarea(placeholder="Ваше сообщение..." name="text" id="text")
+                            span.alert
+                                | <b>!</b> Все поля обязательны для заполнения
+                            .contact__captcha
+                                <div class="visualCaptcha" id="simple-captcha">
+                                    <div class="visualCaptcha-possibilities">
+                                        <div class="img">
+                                            <a href="javascript:void(0);" role='airplain'>
+                                                +svg('airplain')
+                                            </a>
+                                        </div>
+                                        <div class="img">
+                                            <a href="javascript:void(0);" role='shirt'>
+                                                +svg('shirt')
+                                            </a>
+                                        </div>
+                                        <div class="img">
+                                            <a href="javascript:void(0);" role='buggy'>
+                                                +svg('buggy')
+                                            </a>
+                                        </div>
+                                        <div class="img">
+                                            <a href="javascript:void(0);" role='auto'>
+                                                +svg('auto')
+                                            </a>
+                                        </div>
+                                        <div class="img">
+                                            <a href="javascript:void(0);" role='headphone'>
+                                                +svg('headphone')
+                                            </a>
+                                        </div>
+                                        <div class="img">
+                                            <a href="javascript:void(0);" role='coffee'>
+                                                +svg('coffee')
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="visualCaptcha-explanation">Выберите&nbsp;<span class="active">"Детская коляска"</span>, чтобы подтвердить, что&nbsp;Вы не&nbsp;робот</div>
+                                </div>
+                                .contact__btn
+                                    button(type="submit").btn
+                                        | Отправить
+        // Подвал
+        include pages/footer

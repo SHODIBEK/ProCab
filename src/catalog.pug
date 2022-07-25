@@ -1,0 +1,243 @@
+extends pug/base
+
+append vars
+    - title = 'Каталог товаров'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#3181D7'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page']
+
+block content
+    .content
+        // Шапка
+        include pages/header
+        // Контент
+        .main
+            .container
+                .crumbs
+                    ul
+                        li
+                            a(href=`/` title="На главную")
+                                | Главная
+                        li
+                            span Каталог товаров
+                .catalog
+                    .title
+                        h2
+                            | Наша продукция
+                    .catalog__wrapper
+                        .catalog__left
+                            .catalog__nav
+                                nav
+                                    .catalog__nav-title
+                                        span КАТАЛОГ
+                                    button.dwn__link
+                                        span.dwn__icon
+                                        span.dwn__txt Скачать каталог
+                                    ul.catalog__nav-items
+                                        li.catalog__nav-item
+                                            a(href="#" title="Силовые кабели с пластмассовой изоляцией на номинальное напряжение до 3 кв").catalog__nav-link
+                                                | Силовые кабели с пластмассовой изоляцией на номинальное напряжение до 3 кв
+                                            span.catalog__nav-trigger.js-trigger
+                                            ul.catalog__nav-sublist
+                                                li
+                                                    a(href="#")
+                                                        | АПвП
+                                                li
+                                                    a(href="#")
+                                                        | АПвВ
+                                                li
+                                                    a(href="#")
+                                                        | ПвП
+                                                li
+                                                    a(href="#")
+                                                        | ПвВ
+                                        li.catalog__nav-item
+                                            a(href="#" title="Кабели с изоляцией из сшитого полиэтилена на напряжение от 6 до 35 кв").catalog__nav-link
+                                                | Кабели с изоляцией из сшитого полиэтилена на напряжение от 6 до 35 кв
+                                            span.catalog__nav-trigger.js-trigger
+                                            ul.catalog__nav-sublist
+                                                li
+                                                    a(href="#")
+                                                        | АПвП
+                                                li
+                                                    a(href="#")
+                                                        | АПвВ
+                                                li
+                                                    a(href="#")
+                                                        | ПвП
+                                                li
+                                                    a(href="#")
+                                                        | ПвВ
+                                        li.catalog__nav-item
+                                            a(href="#" title="Контрольные кабели").catalog__nav-link
+                                                | Контрольные кабели
+                                            span.catalog__nav-trigger.js-trigger
+                                        li.catalog__nav-item
+                                            a(href="#" title="Провода для передачи электроэнергии").catalog__nav-link
+                                                | Провода для передачи электроэнергии
+                                            span.catalog__nav-trigger.js-trigger
+                                        li.catalog__nav-item
+                                            a(href="#" title="Провода и кабели для электрических установок").catalog__nav-link
+                                                | Провода и кабели для электрических установок
+                                            span.catalog__nav-trigger.js-trigger
+                                        li.catalog__nav-item
+                                            a(href="#" title="Кабель для систем пожарной и охранной сигнализации").catalog__nav-link
+                                                | Кабель для систем пожарной и охранной сигнализации
+                                            span.catalog__nav-trigger.js-trigger
+                                        li.catalog__nav-item
+                                            a(href="#" title="Кабели универсальные и инструментальные").catalog__nav-link
+                                                | Кабели универсальные и инструментальные
+                                            span.catalog__nav-trigger.js-trigger
+                                        li.catalog__nav-item
+                                            a(href="#" title="Кабели для структурированных кабельных систем").catalog__nav-link
+                                                | Кабели для структурированных кабельных систем
+                                            span.catalog__nav-trigger.js-trigger
+                            .newWidget.desktop
+                                h2.newWidget__title
+                                    | Новинки
+                                .card__item
+                                    .action.card__action
+                                        | Новинка
+                                    img(src="images/content/item-1.png", alt="АПвВ 1х70/16-35").card__img
+                                    .card__name
+                                        | АПвВ 1х70/16-35
+                                    .card__desc
+                                        | Кабели АПвВ предназначены для распределения электрической энергии в
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                        .catalog__right
+                            .card__items
+                                .card__item
+                                    .action.card__action
+                                        | Новинка
+                                    img(src="images/content/item-2.png", alt="АВВГ 3х6+1х4 - 1 *").card__img
+                                    .card__name
+                                        | АВВГ 3х6+1х4 - 1 *
+                                    .card__desc
+                                        | Кабель силовой АВВГ предназначен для передачи и распределения
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    img(src="images/content/item-3.png", alt="АВБбШв 3х95 - 1 *").card__img
+                                    .card__name
+                                        | АВБбШв 3х95 - 1 *
+                                    .card__desc
+                                        | Кабель силовой АВБбШв предназначен для передачи и распределения
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    img(src="images/content/item-4.png", alt="КГ 1-30-90").card__img
+                                    .card__name
+                                        | КГ 1-30-90
+                                    .card__desc
+                                        | Кабели грузонесущие геофизические – предназначены для спуска и
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    img(src="images/content/item-5.png", alt="А 70").card__img
+                                    .card__name
+                                        | А 70
+                                    .card__desc
+                                        | Провода предназначены для передачи электрической энергии в воздушных
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    .action.card__action
+                                        | Новинка
+                                    img(src="images/content/item-6.png", alt="ПУГНП 2х2,5").card__img
+                                    .card__name
+                                        | ПУГНП 2х2,5
+                                    .card__desc
+                                        | Провод применяется для неподвижной прокладки в осветительных сетях
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    img(src="images/content/item-7.png", alt="ПВС 3х2,5").card__img
+                                    .card__name
+                                        | ПВС 3х2,5
+                                    .card__desc
+                                        | Провод с гибкими медными жилами, предназначен для присоединения
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    .action.card__action
+                                        | Новинка
+                                    img(src="images/content/item-8.png", alt="ПВ1 10").card__img
+                                    .card__name
+                                        | ПВ1 10
+                                    .card__desc
+                                        | Провода применяются при прокладке в силовых сетях,
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    img(src="images/content/item-9.png", alt="КСВПВ 4х2х0,52").card__img
+                                    .card__name
+                                        | КСВПВ 4х2х0,52
+                                    .card__desc
+                                        | КСВПВ – это сетевой кабель с оболочкой из
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                                .card__item
+                                    img(src="images/content/item-10.png", alt="ВВГ 4х2,5 - 1 *").card__img
+                                    .card__name
+                                        | ВВГ 4х2,5 - 1 *
+                                    .card__desc
+                                        | Кабель силовой ВВГ предназначен для передачи и распределения
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+                            .pagination
+                                ul
+                                    li
+                                        a(href="#")
+                                            | пред.страница
+                                    li
+                                        a(href="#")
+                                            | 1
+                                    li.active
+                                        a(href="#")
+                                            | 2
+                                    li
+                                        a(href="#")
+                                            | 3
+                                    li
+                                        a(href="#")
+                                            | 4
+                                    li
+                                        span
+                                            | ...
+                                    li
+                                        a(href="#")
+                                            | 10
+                                    li
+                                        a(href="#")
+                                            | след.страница
+                            .newWidget.mobile
+                                h2.newWidget__title
+                                    | Новинки
+                                .card__item
+                                    .action.card__action
+                                        | Новинка
+                                    img(src="images/content/item-1.png", alt="АПвВ 1х70/16-35").card__img
+                                    .card__name
+                                        | АПвВ 1х70/16-35
+                                    .card__desc
+                                        | Кабели АПвВ предназначены для распределения электрической энергии в
+                                    .card__link
+                                        a(href="#" title="перейти к товару").btn
+                                            | перейти к товару
+        // Подвал
+        include pages/footer

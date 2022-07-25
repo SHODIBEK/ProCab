@@ -1,0 +1,192 @@
+header.header
+    .container
+        .header-wrapper
+            a(href="/").header-logo.logo
+                img(src="logo.svg", alt="logo")
+            ul.mobile__number
+                li
+                    span.phone-icon
+                    span +998 <b>71 258 08 58</b>
+                li
+                    span.phone-icon
+                    span +998 <b>71 258 08 58</b>
+                li
+                    span.phone-icon
+                    span +998 <b>71 258 08 58</b>
+            .mobile__menu-btn#mobileBtn
+                span
+                span
+                span
+            .header-nav
+                .header-top
+                    nav.header-top__nav
+                        .header-top__navList
+                            a(href="/").home.header-top__navLink
+                                +svg("home")
+                        .header-top__navList
+                            a(href="javascript:void(0);").header-top__navLink.header-top__nav--hover
+                                | О компании
+                            ul.header-top__navSubList
+                                li
+                                    a(href="#")
+                                        | О нас
+                                li
+                                    a(href="#")
+                                        | Миссия и ценности компании
+                                li
+                                    a(href="#")
+                                        | Корпоративная социальная ответственность
+                                li
+                                    a(href="#")
+                                        | Наши преимущества
+                                li
+                                    a(href="#")
+                                        | Производство
+                                li
+                                    a(href="#")
+                                        | Лицензии/ Сертификаты
+                                li
+                                    a(href="#")
+                                        | Отзывы
+                        .header-top__navList
+                            a(href="#").header-top__navLink.header-top__nav--hover
+                                | Новости
+                        .header-top__navList
+                            a(href="#").header-top__navLink.header-top__nav--hover
+                                | Контакты
+                    ul.social
+                        li.social-list
+                            a(href="#" target="_blank").social-link
+                                +svg("fb").social-icon.fb
+                        li.social-list
+                            a(href="#" target="_blank").social-link
+                                +svg("insta").social-icon.insta
+                        li.social-list
+                            a(href="#" target="_blank").social-link
+                                +svg("tg").social-icon.tg
+                        li.social-list
+                            a(href="#" target="_blank").social-link
+                                +svg("in").social-icon.in
+                        li.social-list
+                            a(href="#" target="_blank").social-link
+                                +svg("youtube").social-icon.youtube
+                    .lang
+                        .lang__items
+                            a(href="javascript:void(0);").lang__item.lang-current
+                                img(src="images/icons/rus.svg", alt="Ru")
+                                span.lang__txt
+                                    | Ru
+                            .lang__sublang
+                                a(href="#").lang__item
+                                    img(src="images/icons/rus.svg", alt="Ru")
+                                    span.lang__txt
+                                        | Ru
+                                a(href="#").lang__item
+                                    img(src="images/icons/uzb.svg", alt="Uz")
+                                    span.lang__txt
+                                        | Uz
+                                a(href="#").lang__item
+                                    img(src="images/icons/eng.svg", alt="En")
+                                    span.lang__txt
+                                        | En
+                .header-bottom
+                    ul.menu
+                        li.menu__list
+                            button(type="button" id="menuBtn").btn.btn-catalog
+                                span.desktop Каталог
+                                span.mobile Каталог продукции
+                                span.arrow
+                        ul.menu__submenu.menu__submenu--hide#submenu
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Силовые кабели с пластмассовой изоляцией на номинальное напряжение до 3 кв 
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Кабели с изоляцией из сшитого полиэтилена на напряжение от 6 до 35 кв
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Контрольные кабели
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Провода для передачи электроэнергии
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Провода и кабели для электрических установок
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Кабель для систем пожарной и охранной сигнализации
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Кабели универсальные и инструментальные
+                            li.menu__sublist
+                                a(href="#").menu__sublink
+                                    | Кабели для структурированных кабельных систем
+                        ul.mobile__menu
+                            li.mobile__menu-item
+                                a(href="#")
+                                    | Главная
+                            li.mobile__menu-item.submenu
+                                a(href="javascript:void(0);").submenu__btn.btn
+                                    | О компании
+                                    <span class="arrow"></span>
+                                ul.menu__submenu
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | О нас
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | Миссия и ценности компании
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | Корпоративная социальная ответственность
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | Наши преимущества
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | Производство
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | Лицензии/ Сертификаты
+                                    li.menu__sublist
+                                        a(href="#").menu__sublink
+                                            | Отзывы
+                            li.mobile__menu-item
+                                a(href="#")
+                                    | Новости
+                            li.mobile__menu-item
+                                a(href="#")
+                                    | Контакты
+                    form(action="/" method="GET").search
+                        .form-group
+                            input(type="text" name="search" class="search-input" placeholder="Поиск по сайту" autocomplete="off")
+                            button(type="submit").search-icon
+                                +svg("search")
+                        // mobile lang
+                        .lang
+                            .lang__items
+                                a(href="javascript:void(0);").lang__item.lang-current
+                                    img(src="images/icons/rus.svg", alt="Ru")
+                                    span.lang__txt
+                                        | Ru
+                                .lang__sublang
+                                    a(href="#").lang__item
+                                        img(src="images/icons/rus.svg", alt="Ru")
+                                        span.lang__txt
+                                            | Ru
+                                    a(href="#").lang__item
+                                        img(src="images/icons/uzb.svg", alt="Uz")
+                                        span.lang__txt
+                                            | Uz
+                                    a(href="#").lang__item
+                                        img(src="images/icons/eng.svg", alt="En")
+                                        span.lang__txt
+                                            | En
+                    .phone
+                        span.phone-icon
+                        p
+                            | +998 <span>71 258 08 58</span>
+                        p
+                            | +998 <span>71 257 60 00</span>
+                        p
+                            | +998 <span>71 126 04 44</span>

@@ -1,0 +1,60 @@
+extends pug/base
+
+append vars
+    - title = 'Сертификаты'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#3181D7'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page']
+
+block content
+    .content
+        // Шапка
+        include pages/header
+        // Контент
+        .main
+            .container
+                .crumbs
+                    ul
+                        li
+                            a(href=`/` title="На главную")
+                                | Главная
+                        li
+                            span Сертификаты
+                .certifications
+                    .title
+                        h2
+                            | Сертификаты
+                    .default-section
+                        p
+                            | Ниже перечисленные международные сертификаты ещё раз подтверждают высокое качество нашей продукции!
+                        .certifications__slider.owl-carousel
+                            .certifications__item
+                                a(href="images/content/sert-1.jpg" data-fancybox="certifications").certifications__link
+                                    img(src="images/content/sert-1.jpg", alt="").certifications__img
+                            .certifications__item
+                                a(href="images/content/sert-2.jpg" data-fancybox="certifications").certifications__link
+                                    img(src="images/content/sert-2.jpg", alt="").certifications__img
+                            .certifications__item
+                                a(href="images/content/sert-3.jpg" data-fancybox="certifications").certifications__link
+                                    img(src="images/content/sert-3.jpg", alt="").certifications__img
+                            .certifications__item
+                                a(href="images/content/sert-4.jpg" data-fancybox="certifications").certifications__link
+                                    img(src="images/content/sert-4.jpg", alt="").certifications__img
+                            .certifications__item
+                                a(href="images/content/sert-2.jpg" data-fancybox="certifications").certifications__link
+                                    img(src="images/content/sert-2.jpg", alt="").certifications__img
+                        p
+                            | Равным образом начало повседневной работы по формированию позиции способствует подготовки и реализации системы обучения кадров, соответствует насущным потребностям. Товарищи! дальнейшее развитие различных форм деятельности требуют от нас анализа позиций, занимаемых участниками в отношении поставленных задач.
+                        br
+                        p
+                            | Таким образом рамки и место обучения кадров позволяет оценить значение существенных финансовых и административных условий. Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнять важные задания по разработке дальнейших направлений развития. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке систем массового участия. Разнообразный и богатый опыт укрепление и развитие структуры способствует подготовки и реализации форм развития. С другой стороны начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке систем массового участия.
+                        br
+                        p
+                            | Идейные соображения высшего порядка, а также сложившаяся структура организации требуют от нас анализа систем массового участия. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации соответствующий условий активизации. Разнообразный и богатый опыт сложившаяся структура организации представляет собой интересный эксперимент проверки систем массового участия. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же укрепление и развитие структуры в значительной степени обуславливает создание соответствующий условий активизации..
+
+        // Подвал
+        include pages/footer

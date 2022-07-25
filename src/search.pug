@@ -1,0 +1,74 @@
+extends pug/base
+
+append vars
+    - title = 'Поиск по сайту'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#3181D7'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page']
+
+block content
+    .content
+        // Шапка
+        include pages/header
+        // Контент
+        .main
+            .container
+                .crumbs
+                    ul
+                        li
+                            a(href=`/` title="На главную")
+                                | Главная
+                        li
+                            span Поиск по сайту
+                .search
+                    .title
+                        h2
+                            | Поиск по сайту
+                    .search__form
+                        form(action="/" method="GET")
+                            input(type="search" name="query" placeholder="Поиск по сайту")
+                            button(type="submit").btn-search
+                                +svg('search')
+                    .search__items
+                        - for(var i = 0; i < 5; i++) {
+                            .search__item
+                                a(href="#").search__link
+                                    h4.search__title
+                                        | PROCAB В ПАРТНЕРСТВЕ С APPLE
+                                    p.search__subtitle
+                                        | ProCab официально включена в список поставщиков Apple в Узбекистане. Мы в декабре подали заявку на получения статуса поставщика Apple. В ней были указаны следующие виды продукции: медные кабели и провода, силовые кабели, изолированные и неизолированные провода. 27 декабря пришел ответ от Apple об успешном добавлении компании ProCab в список поставщиков.
+                                    span.search__info
+                                        | http://www.procab.uz/ru/news/show/5
+                        - }
+                    .pagination
+                        ul
+                            li
+                                a(href="#")
+                                    | пред.страница
+                            li
+                                a(href="#")
+                                    | 1
+                            li.active
+                                a(href="#")
+                                    | 2
+                            li
+                                a(href="#")
+                                    | 3
+                            li
+                                a(href="#")
+                                    | 4
+                            li
+                                span
+                                    | ...
+                            li
+                                a(href="#")
+                                    | 10
+                            li
+                                a(href="#")
+                                    | след.страница
+        // Подвал
+        include pages/footer

@@ -1,0 +1,62 @@
+extends pug/base
+
+append vars
+    - title = 'Новости'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#3181D7'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page']
+
+block content
+    .content
+        // Шапка
+        include pages/header
+        // Контент
+        .main
+            .container
+                .crumbs
+                    ul
+                        li
+                            a(href=`/` title="На главную")
+                                | Главная
+                        li
+                            span Новости
+                .news
+                    .title
+                        h2
+                            | Новости
+                    .news__items
+                        - for (var i = 0; i < 4; i++) {
+                            a(href="#" title="").news__item
+                                span.date
+                                    | 20.06.2019
+                                img(src=`images/content/blog-1.jpg`, alt='PROCAB В ПАРТНЕРСТВЕ С APPLE')
+                                h2
+                                    | PROCAB В ПАРТНЕРСТВЕ С APPLE
+                                p
+                                    | ProCab официально включена в список поставщиков Apple в Узбекистане. Мы в декабре подали заявку на получения статуса поставщика Apple. В ней были указаны следующие виды продукции
+                            a(href="#" title="").news__item
+                                span.date
+                                    | 20.06.2019
+                                img(src=`images/content/blog-2.jpg`, alt='С НОВЫМ ГОДОМ!')
+                                h2
+                                    | С НОВЫМ ГОДОМ!
+                                p
+                                    | От имени коллектива компании Procab всех Вас поздравляем с наступающим Новым годом! Пусть новый год станет для Вас годом успехов и исполнения самых заветных желаний, пусть он будет
+                            a(href="#" title="").news__item
+                                span.date
+                                    | 20.06.2019
+                                img(src='images/content/blog-3.jpg', alt='МЕЖДУНАРОДНАЯ ЯРМАРКА')
+                                h2
+                                    | МЕЖДУНАРОДНАЯ ЯРМАРКА
+                                p
+                                    | ProCab участвует в X Международной промышленной ярмарке и Кооперационной бирже. Ярмарка пройдет с 24 по 31 октября в "Узэкспоцентре". Вход свободный
+                        - }
+                    .news__btn
+                        button(type="button").more-button.btn
+                            | Показать еще
+        // Подвал
+        include pages/footer

@@ -1,0 +1,10 @@
+@mixin retina {
+    // stylelint-disable-next-line media-feature-name-no-vendor-prefix
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+@mixin bglinear {
+    background: linear-gradient(124.04deg, #FBD000 0%, #FDA700 100%);
+}

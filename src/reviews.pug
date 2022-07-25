@@ -1,0 +1,116 @@
+extends pug/base
+
+append vars
+    - title = 'Отзывы'
+    - meta.description = 'Описание страницы'
+    - meta.viewport = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    - link.icon = './favicon.ico'
+    - meta.formatDetection = 'telephone=no'
+    - meta.themeColor = '#3181D7'
+    - defaultLink = 'javascript:void(0);'
+    - body.classList = ['inner-page']
+
+block content
+    .content
+        // Шапка
+        include pages/header
+        // Контент
+        .main
+            .container
+                .crumbs
+                    ul
+                        li
+                            a(href=`/` title="На главную")
+                                | Главная
+                        li
+                            span Отзывы
+                .title
+                        h2
+                            | Отзывы Наших Клиентов
+                .reviews
+                    .reviews__items
+                        - for(var i = 0; i < 8; i++) {
+                            .reviews__item
+                                .reviews__top
+                                    img(src="images/content/man.jpg", alt="").reviews__img
+                                    p.reviews__name
+                                        | Сардор Хакимов
+                                .reviews__bottom
+                                    p.reviews__text
+                                        | Идейные соображения высшего порядка, а также постоянное информационно -пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. 
+                        - }
+                    .reviews__form
+                        .reviews__title
+                            | Оставить отзыв
+                        .reviews__form-wrapper
+                            form(action="/" method="GET")
+                                .reviews__form-groups
+                                    .input-group
+                                        input(type="text" name="name" placeholder="Представтесь пожалуйста" required)
+                                    .input-group
+                                        input(type="email" name="email" placeholder="Ваш электронный адрес почты" required)
+                                    .input-group
+                                        textarea(name="" placeholder="Введите сообщение" required)
+                                span.alert
+                                    | <b>!</b> Все поля обязательны для заполнения
+                                .reviews__form-bottom
+                                    <div class="visualCaptcha" id="simple-captcha">
+                                        <div class="visualCaptcha-possibilities">
+                                            <div class="img">
+                                                <a href="javascript:void(0);" role='shirt'>
+                                                    +svg('shirt')
+                                                </a>
+                                            </div>
+                                            <div class="img">
+                                                <a href="javascript:void(0);" role='headphone'>
+                                                    +svg('headphone')
+                                                </a>
+                                            </div>
+                                            <div class="img">
+                                                <a href="javascript:void(0);" class='active' role='auto'>
+                                                    +svg('auto')
+                                                </a>
+                                            </div>
+                                            <div class="img">
+                                                <a href="javascript:void(0);" role='buggy'>
+                                                    +svg('buggy')
+                                                </a>
+                                            </div>
+                                            <div class="img">
+                                                <a href="javascript:void(0);" role='coffee'>
+                                                    +svg('coffee')
+                                                </a>
+                                            </div>
+                                            <div class="img">
+                                                <a href="javascript:void(0);" role='airplain'>
+                                                    +svg('airplain')
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="visualCaptcha-explanation">Выберите&nbsp;<span class="active">"Детская коляска"</span>, чтобы подтвердить, что&nbsp;Вы не&nbsp;робот</div>
+                                    </div>
+                                    .reviews__form-other
+                                        .reviews__form-atention
+                                            .reviews__form-atention__title
+                                                | Формат и макс. вес файла
+                                            .reviews__form-atention__items
+                                                .reviews__form-atention__item
+                                                    | JPG
+                                                .reviews__form-atention__item
+                                                    | PNG
+                                                .reviews__form-atention__item
+                                                    | GIF
+                                                .reviews__form-atention__item
+                                                    | 2mb
+                                        .reviews__form__btn
+                                            // Код по загрузки фото в main.js
+                                            span.upload-error Размер фото больше 2мб
+                                            span.upload-done Фото успешно загруженно
+                                            <div class="upload-img">
+                                                <label for="image_uploads" class="uploads-icon">Прикрепить фото</label>
+                                                <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png, .gif" multiple hidden>
+                                            </div>
+                                            button(type="submit").btn
+                                                | Отправить
+        // Подвал
+        include pages/footer

@@ -1,0 +1,173 @@
+.topSlider {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    min-height: 500px;
+    
+    @include mobile {
+        margin-top: 24px;
+        min-height: unset;
+    }
+    &-wrapper {
+        position: relative;
+        width: 100%;
+        min-height: 500px;
+        @include mobile {
+            min-height: unset;
+        }
+    }
+    &-txt {
+        position: relative;
+        width: 450px;
+        padding-top: 27px;
+        opacity: 0;
+        z-index: 2;
+        animation: fade-out 5s ease forwards;
+        
+        @include mobile {
+            width: 100%;
+            padding-top: 0;
+        }
+    }
+    h1 {
+        margin-top: 0;
+        margin-bottom: 18px;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 35px;
+        color: $color-lblack;
+        
+        @include mobile {
+            margin-bottom: 10px;
+            font-size: 22px;
+            line-height: 25px;
+        }
+    }
+    
+    p {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-lblack;
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    &-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 994px;
+        min-height: 500px;
+        margin: 0 auto;
+        
+        @include mobile {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            min-height: unset;
+        }
+    }
+    .city {
+        position: absolute;
+        left: -100px;
+        bottom: 88px;
+        width: 1260px;
+        height: 240px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        animation: fade-out 6s ease-in-out forwards;
+        
+        @include mobile {
+            width: 750px;
+            height: 171.62px;
+            left: -307px;
+            bottom: 15px;
+        }
+    }
+    .city-2 {
+        position: absolute;
+        right: 21px;
+        bottom: 14px;
+        width: 560.88px;
+        height: 491px;
+        path {
+            stroke-dasharray: 1750;
+            stroke-dashoffset: 1750;
+        }
+        @include mobile {
+            display: block;
+            position: relative;
+            width: 320.56px;
+            height: 285px;
+            bottom: unset;
+            right: unset;
+            
+        }
+    }
+    
+    .city-3 {
+        position: absolute;
+        right: -103px;
+        bottom: -49px;
+        width: 774px;
+        height: 651px;
+        opacity: 0;
+        
+        @include mobile {
+            width: 440.56px;
+            height: 350px;
+            right: -102px;
+            bottom: -12px;
+            background-size: 100%;
+        }
+    }
+}
+
+.pace-done .city-2 path {
+    animation-name: draw, fade-in;
+    animation-timing-function: linear;
+    animation-duration: 8s;
+    animation-delay: 1.5s, 8s;
+}
+
+.pace-done .city-3 {
+    animation: fade-out 5s linear forwards;
+    animation-delay: 5s;
+}
+
+.pace-done .topSlider-txt {
+    animation-delay: 3s;
+}
+
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 1750;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
